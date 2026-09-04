@@ -119,7 +119,7 @@ Generation symbols are used for visual debugging, currently they are disabled si
       "maximal",
       "modal",
       "natural",
-      "non-euclidian",
+      "non-euclidean",
       "ontic",
       "ordered",
       "paraconsistent",
@@ -285,7 +285,7 @@ Generation symbols are used for visual debugging, currently they are disabled si
   let case = calc.rem(i, 14)
   if case == 0 { var = upper(var) }
   if case == 1 { var = $cal(var)$ }
-  if case == 2 { var = $var_(#calc.rem(i, 15)$ }
+  if case == 2 { var = $var_(#calc.rem(i, 15))$ }
   if case == 3 { var = $frak(var)$ }
   if case == 4 { var = $bb(var)$ }
   if case == 5 { var = $var_(#get(vars, i + 3))$ }
@@ -330,7 +330,7 @@ Generation symbols are used for visual debugging, currently they are disabled si
   let v3 = var((i * 17) + 3 + n)
   let fun = func(i, i + 1 + n)
   let quan = get(($forall$, $exists$, $exists.not$, $!exists$), i * 3 + n)
-  let case = calc.rem(i, 17)
+  let case = calc.rem(i, 18)
 
   generation-symbol(case, color: black)[#{
       if case == 0 [$v1 v2 bo v3$] else if (
@@ -347,9 +347,9 @@ Generation symbols are used for visual debugging, currently they are disabled si
         case == 11
       ) [$v2 bo v3$] else if case == 12 [$fun(func(#i, #i))$] else if (
         case == 13
-      ) [$v3 bo fun$] else if case == 13 [$fun / v2$] else if (
-        case == 13
-      ) [$abs(v3)$] else if case == 14 [$v3_v2$] else if case == 15 [$v1 bo v3$]
+      ) [$v3 bo fun$] else if case == 14 [$fun / v2$] else if (
+        case == 15
+      ) [$abs(v3)$] else if case == 16 [$v3_v2$] else if case == 17 [$v1 bo v3$]
     }]
 }
 
@@ -543,7 +543,7 @@ Generation symbols are used for visual debugging, currently they are disabled si
       #{
         if (
           case == 0
-        ) [Certain #ogs([#obj1\s]) in #field remain #stem\ed, under the assumtption that #res holds for all #ogs[#obj2\s].] else if (
+        ) [Certain #ogs([#obj1\s]) in #field remain #stem\ed, under the assumption that #res holds for all #ogs[#obj2\s].] else if (
           case == 1
         ) [Provided, #res we have that: ] else if (
           case == 2
@@ -642,9 +642,9 @@ Generation symbols are used for visual debugging, currently they are disabled si
       ) [#strong[Definition #heading] #setup #setup2 #pf] else if (
         case == 5
       ) [#strong[Lemma #heading] #math.italic([#setup2 #setup])] else if (
-        case == 5
-      ) [#strong[Lemma #heading] #emph([#setup1])] else if (
         case == 6
+      ) [#strong[Lemma #heading] #emph([#setup])] else if (
+        case == 7
       ) [#strong[Theorem #heading] #emph([#setup #setup2]). #pf] else [#strong[Lemma #heading] #text(
           weight: "regular",
           style: "italic",
